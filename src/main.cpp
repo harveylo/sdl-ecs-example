@@ -4,6 +4,7 @@
 
 int main(int argc, char* argv[]) 
 {
+    // initialize game window
     cwt::game game(800, 600);
 
     auto bird_1 = game.get_registry().create();

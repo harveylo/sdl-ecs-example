@@ -16,12 +16,15 @@
 
 namespace cwt {
 
+// ! three components
+// * sprite_component for texture and image
 struct sprite_component{
     SDL_Rect src;
     SDL_Rect dst;
     SDL_Texture* texture;
 };
 
+// * transform_component for position and velocity
 struct transform_component{
     float pos_x;
     float pos_y;
@@ -29,6 +32,7 @@ struct transform_component{
     float vel_y;
 };
 
+// * 
 struct keyinputs_component{ };
 
 
@@ -36,6 +40,7 @@ struct keyinputs_component{ };
 
 struct sprite_system 
 {
+    // tick every 
     void update(entt::registry& reg)
     {
         auto view = reg.view<sprite_component, transform_component>();
