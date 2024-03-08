@@ -19,7 +19,13 @@ namespace cwt {
 // ! three components
 // * sprite_component for texture and image
 struct sprite_component{
+    // SDL_Rect holds four elemets, x, y, w, h
+    // for the source rectangle, it describes which part of the texture image will be used to
+    // render the sprite
+    // in other words, the coordinates and size of the texture image to be used
     SDL_Rect src;
+    // for the destination rectangle, it describes where the sprite will be rendered on the screen
+    // in other words, the screen coordinates and the size of the sprite to be put
     SDL_Rect dst;
     SDL_Texture* texture;
 };
