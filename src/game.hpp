@@ -104,6 +104,18 @@ struct movement_system
 
 class game
 {
+    private:
+        std::size_t m_width;
+        std::size_t m_height;
+        SDL_Window* m_window; 
+        SDL_Renderer* m_renderer;
+        bool m_is_running;
+
+        entt::registry m_registry;
+
+        sprite_system m_sprite_system;
+        transform_system m_transform_system;
+        movement_system m_movement_system;
     public: 
         game(std::size_t width, std::size_t height) : m_width(width), m_height(height)
         {
@@ -165,19 +177,6 @@ class game
 
             SDL_RenderPresent(m_renderer);
         }
-
-    private:
-        std::size_t m_width;
-        std::size_t m_height;
-        SDL_Window* m_window; 
-        SDL_Renderer* m_renderer;
-        bool m_is_running;
-
-        entt::registry m_registry;
-
-        sprite_system m_sprite_system;
-        transform_system m_transform_system;
-        movement_system m_movement_system;
 };
 
 
